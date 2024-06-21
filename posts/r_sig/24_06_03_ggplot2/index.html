@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sebastian Weirich">
-<meta name="dcterms.date" content="2024-01-12">
+<meta name="dcterms.date" content="2024-06-03">
+<meta name="description" content="R-SIG 03.06.2024">
 
-<title>IQB Methods Team - Pull requests with Github</title>
+<title>IQB Methods Team - Plotting with ggplot2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../docs/eatPackages/eatTools.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,20 +70,21 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="IQB Methods Team - Pull requests with Github">
-<meta property="og:description" content="">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="IQB Methods Team - Plotting with ggplot2">
+<meta property="og:description" content="R-SIG 03.06.2024">
+<meta property="og:image" content="https://iqb-research.github.io/IQB-Methods/posts/r_sig/24_06_03_ggplot2/plotting.jpg">
 <meta property="og:site_name" content="IQB Methods Team">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">IQB Methods Team</span>
     </a>
   </div>
@@ -95,15 +95,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_r_sig.html"> 
+    <a class="nav-link" href="../../../posts_r_sig.html"> 
 <span class="menu-text">R-Sig</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_newsletter.html"> 
+    <a class="nav-link" href="../../../posts_newsletter.html"> 
 <span class="menu-text">Newsletter</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docs/FAQ/FAQ.html"> 
+    <a class="nav-link" href="../../../docs/FAQ/FAQ.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -112,11 +112,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-internal-documentation">    
         <li>
-    <a class="dropdown-item" href="../../docs/quarto/index.html">
+    <a class="dropdown-item" href="../../../docs/quarto/index.html">
  <span class="dropdown-text">Updating the website</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/discussions/code_conventions.html">
+    <a class="dropdown-item" href="../../../docs/discussions/code_conventions.html">
  <span class="dropdown-text">Code-Konventionen</span></a>
   </li>  
     </ul>
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"> 
+    <a class="nav-link" href="../../../index.xml"> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/git/index.html">GitHub</a></li><li class="breadcrumb-item"><a href="../../docs/git/index.html">Pull requests with Github</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Plotting with <code>ggplot2</code></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -148,7 +148,39 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Plotting with <code>ggplot2</code></h1>
+                  <div>
+        <div class="description">
+          R-SIG 03.06.2024
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">tidyverse</div>
+                <div class="quarto-category">plots</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 3, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -178,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/R/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/R/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Material for learning R</span></a>
   </div>
 </li>
@@ -190,19 +222,19 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/R/ws1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/R/ws1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einführung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/R/ws2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/R/ws2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data.frames, Listen &amp; Plots</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/R/ws3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/R/ws3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pakete und Daten laden</span></a>
   </div>
 </li>
@@ -238,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/reproduce/renv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/reproduce/renv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The renv-Package</span></a>
   </div>
 </li>
@@ -255,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/checkmate/checkmate.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/checkmate/checkmate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using Checkmate</span></a>
   </div>
 </li>
@@ -272,73 +304,73 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Info on eat Packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatAnalysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatAnalysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatAnalysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatATA.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatATA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatATA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatCodebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatCodebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatCodebook</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatFDZ.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatFDZ.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatFDZ</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatGADS.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatGADS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatGADS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatModel.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatModel.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatModel</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatPlot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatPlot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatPlot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatPrep.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatPrep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatPrep</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatRecode.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatRecode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatRecode</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatRep.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatRep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatRep</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/eatPackages/eatTools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/eatPackages/eatTools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">eatTools</span></a>
   </div>
 </li>
@@ -346,16 +378,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
  <span class="menu-text">GitHub</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/git/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../docs/git/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pull requests with Github</span></a>
   </div>
 </li>
@@ -367,87 +399,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#following-steps-are-necessary" id="toc-following-steps-are-necessary" class="nav-link active" data-scroll-target="#following-steps-are-necessary">Following steps are necessary</a></li>
-  <li><a href="#please-note" id="toc-please-note" class="nav-link" data-scroll-target="#please-note">Please note</a></li>
-  <li><a href="#git-workflow-im-terminal-nh" id="toc-git-workflow-im-terminal-nh" class="nav-link" data-scroll-target="#git-workflow-im-terminal-nh">Git-Workflow im Terminal (NH)</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/iqb-research/IQB-Methods/edit/main/docs/git/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iqb-research/IQB-Methods/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/git/index.html">GitHub</a></li><li class="breadcrumb-item"><a href="../../docs/git/index.html">Pull requests with Github</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Pull requests with Github</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sebastian Weirich </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 12, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
+<p><img src="plotting.jpg" class="img-fluid"><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>A ggplot2-tutorial I’ve created can be found <a href="https://nickhaf.github.io/r_tutorial/qmd/plotting/plotting.html">here</a>.</p>
 
 
-<p>When people collaboratively develop software (R packages) and use Github as a repository, colleagues can review software parts before they are included in an updated package version. Since I always forget how the workflow for this works, I’ll write it down here step by step. These steps refer to the use of GitKraken; if you do this in RStudio, it may work differently.</p>
-<section id="following-steps-are-necessary" class="level2">
-<h2 class="anchored" data-anchor-id="following-steps-are-necessary">Following steps are necessary</h2>
-<ol type="1">
-<li>A change has been made in the local repository (on your local hard disc copy of the repository).</li>
-<li>The change is committed in GitKraken, but not yet pushed.</li>
-<li>Instead, right-click on “master” to open a menu and select “create branch here”.</li>
-<li>Assign a name for this branch.</li>
-<li>Push by pressing “Push”.</li>
-<li>Change to the the Github page of the package (for example, <a href="https://github.com/weirichs/eatTools">eatTools repository</a>) and start the pull request via “Compare &amp; pull request”.</li>
-<li>Choose your favorite reviewer under “Reviewer”</li>
-<li>If necessary, enter a comment for the request.</li>
-<li>Click on “create pull request” to start the request.</li>
-<li>Once the author and reviewer have reached an agreement, the review branch can be merged with the master branch (this is not done in GitKraken, but on the GitHub website: select the pull request, scroll down the page and click on “merge pull request into master”)</li>
-<li>Finally, the review branch can be deleted. Choose “delete” on the Github homepage. Then delete the local branch (i.e.&nbsp;in GitKraken) in the same way if necessary</li>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Image by <a href="https://www.bing.com/images/create/a-scientist-moulding-a-plot-of-data-by-hand/1-66587edc1e8f43589fdc865731f162f6?id=Pw2nhqhO37f3lXFK0VoYZQ%3D%3D&amp;view=detailv2&amp;idpp=genimg&amp;idpclose=1&amp;thid=OIG2.1wR3ZVvAOQy3uyh0hWET&amp;form=SYDBIC">Bing Copilot</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
-<section id="please-note" class="level2">
-<h2 class="anchored" data-anchor-id="please-note">Please note</h2>
-<p>As long as the master branch and the new branch are not merged again, there are two “parallel” branches. The background to this is that - as long as developers are working in the new branch - users can always download the latest working version (i.e.&nbsp;the master branch) of the package. As a developer, you always have to check in GitKraken which branch is currently stored in your local repository. If you need to make changes in the new branch, you must first save it locally by double-clicking on the relevant branch.</p>
-</section>
-<section id="git-workflow-im-terminal-nh" class="level2">
-<h2 class="anchored" data-anchor-id="git-workflow-im-terminal-nh">Git-Workflow im Terminal (NH)</h2>
-<ol type="1">
-<li><em>Gegebenenfalls: Auf den mainbranch wechseln:</em> <code>git checkout main</code></li>
-<li>Verifizieren, dass man auf dem richtigen branch ist: <code>git status</code></li>
-<li>Onlinebranch lokal herunterladen: <code>git pull</code></li>
-<li><em>Gegebenenfalls: Neuen branch “branch_2” erstellen, und direkt darauf wechseln:</em> <code>git checkout -b branch_2</code></li>
-<li>(Alle) Änderungen stagen: <code>git add .</code></li>
-<li>Gestagte Änderungen commiten (mit aussagekräftiger Commitmessage): <code>git commit -m "implemented new function"</code></li>
-<li>Commits hochladen: <code>git push</code></li>
-</ol>
-
-
-</section>
-
-</main> <!-- /main -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -857,18 +829,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../docs/eatPackages/eatTools.html" class="pagination-link" aria-label="eatTools">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">eatTools</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iqb-research/IQB-Methods/edit/main/docs/git/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iqb-research/IQB-Methods/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/iqb-research/IQB-Methods/edit/main/posts/r_sig/24_06_03_ggplot2/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iqb-research/IQB-Methods/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
